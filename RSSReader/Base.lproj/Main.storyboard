@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -45,40 +44,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="loginCell" rowHeight="400" id="WCw-Qf-5nD" customClass="UserLoginTableViewCell" customModule="RSSReader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="86" width="375" height="400"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="399.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDn-tJ-aK2" customClass="FacebookLoginButtonView" customModule="RSSReader" customModuleProvider="target">
-                                            <rect key="frame" x="62.5" y="341.5" width="250" height="50"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="FFW-Ha-4UN"/>
-                                                <constraint firstAttribute="width" constant="250" id="TCN-D4-cJq"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="WDn-tJ-aK2" secondAttribute="bottom" constant="8" id="6kR-ES-vW6"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="WDn-tJ-aK2" secondAttribute="bottom" id="8at-Kn-2y0"/>
-                                        <constraint firstItem="WDn-tJ-aK2" firstAttribute="centerX" secondItem="37f-cq-3Eg" secondAttribute="centerX" id="RNw-7K-tTk"/>
-                                    </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="8at-Kn-2y0"/>
-                                        </mask>
-                                    </variation>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="nFy-Au-Jgb" kind="showDetail" identifier="showDetail" trigger="accessoryAction" id="700-AN-FZZ"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" textLabel="BUF-AA-roJ" style="IBUITableViewCellStyleDefault" id="UKX-2O-IqI" customClass="NewsFeedTableViewCell" customModule="RSSReader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="486" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UKX-2O-IqI" id="zev-Z4-1gh">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -139,7 +106,4 @@
             <point key="canvasLocation" x="-336" y="-115"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="700-AN-FZZ"/>
-    </inferredMetricsTieBreakers>
 </document>

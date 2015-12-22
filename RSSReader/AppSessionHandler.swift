@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-@objc protocol UserSessionListener {
+@objc protocol AppSessionListener {
 
     optional func userDidLogIn(err: NSError?);
     optional func userDidLogOut(err: NSError?);
@@ -27,23 +27,23 @@ class AppSessionHandler: NSObject, FBSDKLoginButtonDelegate {
         }
     }
     
-    private lazy var sessionListeners : Array<UserSessionListener> = {
-        return Array<UserSessionListener>()
+    private lazy var sessionListeners : Array<AppSessionListener> = {
+        return Array<AppSessionListener>()
     }()
     
     func logOut(err: NSError?) {
-        sessionListeners.forEach { (listener: UserSessionListener) -> () in
+        sessionListeners.forEach { (listener: AppSessionListener) -> () in
             listener.userDidLogOut?(err)
         }
     }
     
     func logIn(err: NSError?) {
-        sessionListeners.forEach { (listener: UserSessionListener) -> () in
+        sessionListeners.forEach { (listener: AppSessionListener) -> () in
             listener.userDidLogIn?(err)
         }
     }
     
-    func addSessionListener(listener: UserSessionListener) {
+    func addSessionListener(listener: AppSessionListener) {
         sessionListeners.append(listener)
     }
     

@@ -37,26 +37,13 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataProvider.rssData.count + (!AppSessionHandler.sharedInstance.isUserLoggedIn ? 1 : 0)
+        return dataProvider.rssData.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if (indexPath.row == 0 && !AppSessionHandler.sharedInstance.isUserLoggedIn) {
-            let cell = tableView.dequeueReusableCellWithIdentifier("loginCell", forIndexPath: indexPath)
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("feedCell", forIndexPath: indexPath)
-            //TODO: - setup with data
-            return cell
-        }
-    }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return (indexPath.row == 0 && !AppSessionHandler.sharedInstance.isUserLoggedIn) ?
-            tableView.frame.size.height -
-                (self.navigationController?.navigationBar.frame.size.height)! -
-                UIApplication.sharedApplication().statusBarFrame.size.height :
-            44
+        let cell = tableView.dequeueReusableCellWithIdentifier("feedCell", forIndexPath: indexPath)
+        //TODO: - setup with data
+        return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

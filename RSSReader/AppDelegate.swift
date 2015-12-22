@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,14 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window!.makeKeyAndVisible()
+        let didInitFacebookSuccessfully = AppSessionHandler.sharedInstance.inintFacebookSDK(withApplication: application, launchOptions: launchOptions)
         
         AppNavigationManager.sharedInstance.setMainWindow(self.window!)
         AppNavigationManager.sharedInstance.startApplication()
+        self.window!.makeKeyAndVisible()
     
-        return AppSessionHandler.sharedInstance.inintFacebookSDK(withApplication: application, launchOptions: launchOptions)
+        return didInitFacebookSuccessfully
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL,sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(
+            application,
+            openURL: url,
+            sourceApplication: sourceApplication,
+            annotation: annotation)
     }
 
     func applicationWillResignActive(application: UIApplication) {
