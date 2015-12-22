@@ -13,6 +13,22 @@
 		211F3F4D1C285A4700D31927 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 211F3F4B1C285A4700D31927 /* Main.storyboard */; };
 		211F3F4F1C285A4700D31927 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211F3F4E1C285A4700D31927 /* Assets.xcassets */; };
 		211F3F521C285A4700D31927 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 211F3F501C285A4700D31927 /* LaunchScreen.storyboard */; };
+		21AC87BA1C28C2AE00A17546 /* AppSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87B91C28C2AE00A17546 /* AppSessionHandler.swift */; };
+		21AC87BC1C28C44B00A17546 /* AppNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87BB1C28C44B00A17546 /* AppNavigationManager.swift */; };
+		21AC87BF1C28C86700A17546 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87BE1C28C86700A17546 /* AppDependencies.swift */; };
+		21AC87C11C28C8D500A17546 /* RSSDataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87C01C28C8D500A17546 /* RSSDataReader.swift */; };
+		21AC87C41C28C8EB00A17546 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87C31C28C8EB00A17546 /* API.swift */; };
+		21AC87CA1C28D61100A17546 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87C91C28D61100A17546 /* Utils.swift */; };
+		21AC87CC1C28D64E00A17546 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87CB1C28D64E00A17546 /* Extensions.swift */; };
+		21AC87CD1C28DA4100A17546 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AC87C51C28CA5A00A17546 /* FBSDKCoreKit.framework */; };
+		21AC87CE1C28DA4100A17546 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AC87C61C28CA5A00A17546 /* FBSDKLoginKit.framework */; };
+		21AC87D01C29656200A17546 /* FacebookLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87CF1C29656200A17546 /* FacebookLoginButtonView.swift */; };
+		21AC87D41C2965DF00A17546 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21AC87D31C2965DF00A17546 /* Detail.storyboard */; };
+		21AC87D61C296DA100A17546 /* UserLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87D51C296DA100A17546 /* UserLoginTableViewCell.swift */; };
+		21AC87D81C296DD800A17546 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87D71C296DD800A17546 /* NewsFeedTableViewCell.swift */; };
+		21AC87DB1C296E4000A17546 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21AC87DA1C296E4000A17546 /* Profile.storyboard */; };
+		21AC87DD1C296E9100A17546 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87DC1C296E9100A17546 /* ProfileViewController.swift */; };
+		21AC87DF1C296FF200A17546 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 21AC87DE1C296FF200A17546 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +40,22 @@
 		211F3F4E1C285A4700D31927 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		211F3F511C285A4700D31927 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		211F3F531C285A4700D31927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21AC87B91C28C2AE00A17546 /* AppSessionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSessionHandler.swift; sourceTree = "<group>"; };
+		21AC87BB1C28C44B00A17546 /* AppNavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationManager.swift; sourceTree = "<group>"; };
+		21AC87BE1C28C86700A17546 /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		21AC87C01C28C8D500A17546 /* RSSDataReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSDataReader.swift; sourceTree = "<group>"; };
+		21AC87C31C28C8EB00A17546 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		21AC87C51C28CA5A00A17546 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Resources/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		21AC87C61C28CA5A00A17546 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Resources/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		21AC87C91C28D61100A17546 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		21AC87CB1C28D64E00A17546 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		21AC87CF1C29656200A17546 /* FacebookLoginButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLoginButtonView.swift; sourceTree = "<group>"; };
+		21AC87D31C2965DF00A17546 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		21AC87D51C296DA100A17546 /* UserLoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginTableViewCell.swift; sourceTree = "<group>"; };
+		21AC87D71C296DD800A17546 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
+		21AC87DA1C296E4000A17546 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		21AC87DC1C296E9100A17546 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		21AC87DE1C296FF200A17546 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21AC87CD1C28DA4100A17546 /* FBSDKCoreKit.framework in Frameworks */,
+				21AC87CE1C28DA4100A17546 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +74,9 @@
 		211F3F391C285A4700D31927 = {
 			isa = PBXGroup;
 			children = (
+				21AC87DE1C296FF200A17546 /* .gitignore */,
+				21AC87C51C28CA5A00A17546 /* FBSDKCoreKit.framework */,
+				21AC87C61C28CA5A00A17546 /* FBSDKLoginKit.framework */,
 				211F3F441C285A4700D31927 /* RSSReader */,
 				211F3F431C285A4700D31927 /* Products */,
 			);
@@ -56,15 +93,92 @@
 		211F3F441C285A4700D31927 /* RSSReader */ = {
 			isa = PBXGroup;
 			children = (
+				211F3F5D1C285A6E00D31927 /* Utils */,
+				211F3F5A1C285A5500D31927 /* View */,
+				21AC87BD1C28C84900A17546 /* Modules */,
+				211F3F591C285A4E00D31927 /* Core */,
 				211F3F451C285A4700D31927 /* AppDelegate.swift */,
-				211F3F471C285A4700D31927 /* MasterViewController.swift */,
-				211F3F491C285A4700D31927 /* DetailViewController.swift */,
-				211F3F4B1C285A4700D31927 /* Main.storyboard */,
-				211F3F4E1C285A4700D31927 /* Assets.xcassets */,
-				211F3F501C285A4700D31927 /* LaunchScreen.storyboard */,
-				211F3F531C285A4700D31927 /* Info.plist */,
+				211F3F5C1C285A6500D31927 /* Supporting Files */,
 			);
 			path = RSSReader;
+			sourceTree = "<group>";
+		};
+		211F3F591C285A4E00D31927 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				21AC87C21C28C8DC00A17546 /* Network */,
+				21AC87B91C28C2AE00A17546 /* AppSessionHandler.swift */,
+				21AC87BB1C28C44B00A17546 /* AppNavigationManager.swift */,
+				21AC87BE1C28C86700A17546 /* AppDependencies.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		211F3F5A1C285A5500D31927 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				211F3F5E1C285A8C00D31927 /* Main */,
+				21AC87D91C296E2E00A17546 /* Profile */,
+				211F3F501C285A4700D31927 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		211F3F5C1C285A6500D31927 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				211F3F531C285A4700D31927 /* Info.plist */,
+				211F3F4E1C285A4700D31927 /* Assets.xcassets */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		211F3F5D1C285A6E00D31927 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				21AC87C91C28D61100A17546 /* Utils.swift */,
+				21AC87CB1C28D64E00A17546 /* Extensions.swift */,
+				21AC87CF1C29656200A17546 /* FacebookLoginButtonView.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		211F3F5E1C285A8C00D31927 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				211F3F4B1C285A4700D31927 /* Main.storyboard */,
+				21AC87D31C2965DF00A17546 /* Detail.storyboard */,
+				211F3F471C285A4700D31927 /* MasterViewController.swift */,
+				211F3F491C285A4700D31927 /* DetailViewController.swift */,
+				21AC87D51C296DA100A17546 /* UserLoginTableViewCell.swift */,
+				21AC87D71C296DD800A17546 /* NewsFeedTableViewCell.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		21AC87BD1C28C84900A17546 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				21AC87C01C28C8D500A17546 /* RSSDataReader.swift */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		21AC87C21C28C8DC00A17546 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				21AC87C31C28C8EB00A17546 /* API.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		21AC87D91C296E2E00A17546 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				21AC87DA1C296E4000A17546 /* Profile.storyboard */,
+				21AC87DC1C296E9100A17546 /* ProfileViewController.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +241,9 @@
 			files = (
 				211F3F521C285A4700D31927 /* LaunchScreen.storyboard in Resources */,
 				211F3F4F1C285A4700D31927 /* Assets.xcassets in Resources */,
+				21AC87DB1C296E4000A17546 /* Profile.storyboard in Resources */,
+				21AC87D41C2965DF00A17546 /* Detail.storyboard in Resources */,
+				21AC87DF1C296FF200A17546 /* .gitignore in Resources */,
 				211F3F4D1C285A4700D31927 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +255,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21AC87BF1C28C86700A17546 /* AppDependencies.swift in Sources */,
+				21AC87D81C296DD800A17546 /* NewsFeedTableViewCell.swift in Sources */,
+				21AC87C11C28C8D500A17546 /* RSSDataReader.swift in Sources */,
+				21AC87D01C29656200A17546 /* FacebookLoginButtonView.swift in Sources */,
+				21AC87DD1C296E9100A17546 /* ProfileViewController.swift in Sources */,
+				21AC87CA1C28D61100A17546 /* Utils.swift in Sources */,
 				211F3F4A1C285A4700D31927 /* DetailViewController.swift in Sources */,
+				21AC87BA1C28C2AE00A17546 /* AppSessionHandler.swift in Sources */,
+				21AC87CC1C28D64E00A17546 /* Extensions.swift in Sources */,
 				211F3F481C285A4700D31927 /* MasterViewController.swift in Sources */,
 				211F3F461C285A4700D31927 /* AppDelegate.swift in Sources */,
+				21AC87C41C28C8EB00A17546 /* API.swift in Sources */,
+				21AC87D61C296DA100A17546 /* UserLoginTableViewCell.swift in Sources */,
+				21AC87BC1C28C44B00A17546 /* AppNavigationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +381,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resources",
+				);
 				INFOPLIST_FILE = RSSReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gujci.RSSReader;
@@ -264,6 +396,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resources",
+				);
 				INFOPLIST_FILE = RSSReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gujci.RSSReader;
@@ -290,6 +426,7 @@
 				211F3F581C285A4700D31927 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
