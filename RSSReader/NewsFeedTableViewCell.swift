@@ -10,6 +10,12 @@ import UIKit
 
 class NewsFeedTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var newTitle: UILabel!
     
-
+    
+    var titleData: String! {
+        didSet {
+            newTitle.text = titleData
+        }
+    }
 }

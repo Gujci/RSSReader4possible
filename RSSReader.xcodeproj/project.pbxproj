@@ -28,8 +28,6 @@
 		21AC87DD1C296E9100A17546 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87DC1C296E9100A17546 /* ProfileViewController.swift */; };
 		21AC87DF1C296FF200A17546 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 21AC87DE1C296FF200A17546 /* .gitignore */; };
 		21AC87E21C29D62600A17546 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21AC87E11C29D62600A17546 /* Login.storyboard */; };
-		21AC87E41C2A13C900A17546 /* LoginFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87E31C2A13C900A17546 /* LoginFeedCollectionViewController.swift */; };
-		21AC87E61C2A142400A17546 /* LoginFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87E51C2A142400A17546 /* LoginFeedCollectionViewCell.swift */; };
 		21AC87E81C2A143E00A17546 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87E71C2A143E00A17546 /* LoginViewController.swift */; };
 		21AC87EA1C2A28F900A17546 /* RSSSubscriptionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87E91C2A28F900A17546 /* RSSSubscriptionDataManager.swift */; };
 		21AC87EC1C2ACD2100A17546 /* SuggestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87EB1C2ACD2100A17546 /* SuggestionsTableViewController.swift */; };
@@ -62,8 +60,6 @@
 		21AC87DC1C296E9100A17546 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		21AC87DE1C296FF200A17546 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		21AC87E11C29D62600A17546 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		21AC87E31C2A13C900A17546 /* LoginFeedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFeedCollectionViewController.swift; sourceTree = "<group>"; };
-		21AC87E51C2A142400A17546 /* LoginFeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		21AC87E71C2A143E00A17546 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		21AC87E91C2A28F900A17546 /* RSSSubscriptionDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSSubscriptionDataManager.swift; sourceTree = "<group>"; };
 		21AC87EB1C2ACD2100A17546 /* SuggestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsTableViewController.swift; sourceTree = "<group>"; };
@@ -188,8 +184,6 @@
 			children = (
 				21AC87E11C29D62600A17546 /* Login.storyboard */,
 				21AC87E71C2A143E00A17546 /* LoginViewController.swift */,
-				21AC87E31C2A13C900A17546 /* LoginFeedCollectionViewController.swift */,
-				21AC87E51C2A142400A17546 /* LoginFeedCollectionViewCell.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -276,11 +270,9 @@
 				21AC87D01C29656200A17546 /* FacebookLoginButtonView.swift in Sources */,
 				21AC87DD1C296E9100A17546 /* ProfileViewController.swift in Sources */,
 				21AC87CA1C28D61100A17546 /* Utils.swift in Sources */,
-				21AC87E41C2A13C900A17546 /* LoginFeedCollectionViewController.swift in Sources */,
 				21AC87F01C2AEEE900A17546 /* SuggestionTableViewCell.swift in Sources */,
 				211F3F4A1C285A4700D31927 /* DetailViewController.swift in Sources */,
 				21AC87BA1C28C2AE00A17546 /* FacebookSessionHandler.swift in Sources */,
-				21AC87E61C2A142400A17546 /* LoginFeedCollectionViewCell.swift in Sources */,
 				21AC87EE1C2AD5CF00A17546 /* SubscriptionsTableViewController.swift in Sources */,
 				21AC87CC1C28D64E00A17546 /* Extensions.swift in Sources */,
 				211F3F481C285A4700D31927 /* MasterViewController.swift in Sources */,

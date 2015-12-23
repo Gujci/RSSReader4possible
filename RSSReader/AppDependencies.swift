@@ -42,13 +42,15 @@ struct RSSData {
     //TODO: - init
 }
 
-protocol RSSDataListener {
+@objc protocol RSSDataListener {
     
-    func rssDataDidLoad(err: NSError?)
+    optional func rssDataDidLoad(err: NSError?)
+    optional func rssDataSelectedAt(index: Int)
 }
 
 protocol RSSDataProvider {
     
+    var selectedDataIndex: Int! { get set}
     var rssData: Array<RSSData> { get }
     
     func loadData()

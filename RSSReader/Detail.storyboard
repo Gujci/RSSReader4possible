@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SNI-qw-psQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3vf-hP-gwx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -16,30 +16,54 @@
                     <view key="view" contentMode="scaleToFill" id="KZd-X5-FHc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Je-6d-oci">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Je-6d-oci" firstAttribute="leading" secondItem="KZd-X5-FHc" secondAttribute="leading" id="2rE-6w-DqW"/>
+                            <constraint firstItem="0Je-6d-oci" firstAttribute="top" secondItem="KZd-X5-FHc" secondAttribute="top" id="4lo-IS-1Bg"/>
+                            <constraint firstItem="O3n-Um-xR7" firstAttribute="top" secondItem="0Je-6d-oci" secondAttribute="bottom" id="VbN-ah-x4k"/>
+                            <constraint firstAttribute="trailing" secondItem="0Je-6d-oci" secondAttribute="trailing" id="w27-XG-tQg"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="ADi-WV-dlE"/>
+                    <navigationItem key="navigationItem" title="Title" id="XoG-SB-6j2">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="vXa-ZK-Sy9">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="THb-KX-lq3" id="YyZ-S1-Jdb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentWebView" destination="0Je-6d-oci" id="TGx-Q9-tAf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MF-DK-39I" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438.5" y="128.5"/>
+            <point key="canvasLocation" x="935.5" y="127.5"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="X1i-J3-f4h">
+        <scene sceneID="UIs-6n-I9f">
             <objects>
-                <navigationController id="SNI-qw-psQ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3vf-hP-gwx" sceneMemberID="viewController">
+                    <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="L1V-A1-odd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ezg-aM-Soa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="THb-KX-lq3" kind="relationship" relationship="rootViewController" id="rm5-E6-8aL"/>
+                        <segue destination="THb-KX-lq3" kind="relationship" relationship="rootViewController" id="ofq-Kq-8aZ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FHf-2a-blL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AbP-1h-xV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="129"/>
+            <point key="canvasLocation" x="438" y="128"/>
         </scene>
     </scenes>
 </document>

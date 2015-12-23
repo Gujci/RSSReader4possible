@@ -61,6 +61,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="newTitle" destination="BUF-AA-roJ" id="OCx-KY-mC5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -69,7 +72,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Feed" id="Zdf-7t-Un8">
+                    <navigationItem key="navigationItem" title="Your Feed" id="Zdf-7t-Un8">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Lb7-iG-o1m">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DIa-eO-FlC">
                                 <rect key="frame" x="309" y="7" width="50" height="30"/>

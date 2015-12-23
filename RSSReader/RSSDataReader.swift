@@ -10,6 +10,13 @@ import UIKit
 
 class RSSDataReader: NSObject, NSXMLParserDelegate, RSSDataProvider, SubscriptionListener {
 
+    var selectedDataIndex: Int! {
+        didSet {
+            dataListeners.forEach { (listener: RSSDataListener) -> () in
+                listener.rssDataSelectedAt?(selectedDataIndex)
+            }
+        }
+    }
     var rssData: Array<RSSData> {
         get {
             if let data = loadedData {
@@ -32,7 +39,9 @@ class RSSDataReader: NSObject, NSXMLParserDelegate, RSSDataProvider, Subscriptio
     
     func loadData() {
         //TODO: - implement it
-        //TODO: - notify listeners
+        dataListeners.forEach { (listener: RSSDataListener) -> () in
+            listener.rssDataDidLoad?(nil)
+        }
     }
     
     func addDataListener(listener: RSSDataListener) {

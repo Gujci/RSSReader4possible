@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -18,17 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4C-U3-14K">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="u4C-U3-14K" secondAttribute="height" multiplier="1:1" priority="900" id="5UU-GJ-CO6"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="h2p-vo-IqZ" kind="embed" id="9f5-1a-GaN"/>
-                                </connections>
-                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZG-0U-Nka" customClass="FacebookLoginButtonView" customModule="RSSReader" customModuleProvider="target">
-                                <rect key="frame" x="62" y="410" width="250" height="50"/>
+                                <rect key="frame" x="62" y="308.5" width="250" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="GN1-h6-iLd"/>
@@ -38,25 +28,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="WZG-0U-Nka" firstAttribute="centerY" secondItem="BiH-FL-Aph" secondAttribute="centerY" id="0bY-Ve-XV2"/>
                             <constraint firstItem="kdu-GM-HIP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WZG-0U-Nka" secondAttribute="bottom" constant="35" id="H3O-LL-KAt"/>
-                            <constraint firstItem="u4C-U3-14K" firstAttribute="top" secondItem="BiH-FL-Aph" secondAttribute="top" id="KG5-ds-CPb"/>
-                            <constraint firstAttribute="trailing" secondItem="u4C-U3-14K" secondAttribute="trailing" id="KeC-rE-Ndh"/>
-                            <constraint firstAttribute="trailing" secondItem="u4C-U3-14K" secondAttribute="trailing" id="TWA-A8-a28"/>
                             <constraint firstItem="WZG-0U-Nka" firstAttribute="centerX" secondItem="BiH-FL-Aph" secondAttribute="centerX" id="Uz7-4G-4MJ"/>
-                            <constraint firstItem="kdu-GM-HIP" firstAttribute="top" secondItem="u4C-U3-14K" secondAttribute="bottom" id="VuD-Ui-6iF"/>
-                            <constraint firstItem="u4C-U3-14K" firstAttribute="leading" secondItem="BiH-FL-Aph" secondAttribute="leading" id="WID-Np-xYu"/>
-                            <constraint firstItem="WZG-0U-Nka" firstAttribute="top" secondItem="u4C-U3-14K" secondAttribute="bottom" constant="35" id="eaR-R4-CGy"/>
-                            <constraint firstItem="u4C-U3-14K" firstAttribute="top" secondItem="WZG-0U-Nka" secondAttribute="bottom" constant="35" id="pla-D6-hzi"/>
-                            <constraint firstItem="u4C-U3-14K" firstAttribute="leading" secondItem="BiH-FL-Aph" secondAttribute="leading" id="qxe-lO-UUI"/>
                             <constraint firstItem="WZG-0U-Nka" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Cvl-Ul-gac" secondAttribute="bottom" constant="35" id="srK-Na-SDq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="TWA-A8-a28"/>
-                                <exclude reference="WID-Np-xYu"/>
-                                <exclude reference="pla-D6-hzi"/>
                                 <exclude reference="srK-Na-SDq"/>
-                                <exclude reference="VuD-Ui-6iF"/>
+                                <exclude reference="H3O-LL-KAt"/>
                             </mask>
                         </variation>
                     </view>
@@ -65,54 +45,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hId-IY-oVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="490.5" y="431.5"/>
-        </scene>
-        <!--Login Feed Collection View Controller-->
-        <scene sceneID="Dct-rp-VdZ">
-            <objects>
-                <collectionViewController id="h2p-vo-IqZ" customClass="LoginFeedCollectionViewController" customModule="RSSReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="BDQ-tA-Fz6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aEA-G2-eRv">
-                            <size key="itemSize" width="375" height="375"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LoginFeedCell" id="T6t-Ar-NyS" customClass="LoginFeedCollectionViewCell" customModule="RSSReader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KF-sD-ckk">
-                                            <rect key="frame" x="166" y="177" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="5KF-sD-ckk" firstAttribute="centerY" secondItem="T6t-Ar-NyS" secondAttribute="centerY" id="ahj-a5-zDP"/>
-                                    <constraint firstItem="5KF-sD-ckk" firstAttribute="centerX" secondItem="T6t-Ar-NyS" secondAttribute="centerX" id="ds2-ec-bMY"/>
-                                </constraints>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="h2p-vo-IqZ" id="2DB-dH-hA1"/>
-                            <outlet property="delegate" destination="h2p-vo-IqZ" id="g82-Ud-OvA"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VkG-M7-w1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="966.5" y="285.5"/>
         </scene>
     </scenes>
 </document>

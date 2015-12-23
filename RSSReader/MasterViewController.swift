@@ -10,7 +10,7 @@ import UIKit
 
 class MasterViewController: UITableViewController, RSSDataListener {
     
-    private let dataProvider : RSSDataProvider = AppDependencies.sharedInstance.appRSSDataProvider
+    private var dataProvider : RSSDataProvider = AppDependencies.sharedInstance.appRSSDataProvider
     
     @IBOutlet weak var profileButton: UIBarButtonItem!
 
@@ -46,13 +46,13 @@ class MasterViewController: UITableViewController, RSSDataListener {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("feedCell", forIndexPath: indexPath)
-        //TODO: - setup with data
+        let cell = tableView.dequeueReusableCellWithIdentifier("feedCell", forIndexPath: indexPath) as! NewsFeedTableViewCell
+        cell.titleData = dataProvider.rssData[indexPath.row].title
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //TODO: - implement it
+        dataProvider.selectedDataIndex = indexPath.row
     }
     
     //MARK: - Navigation

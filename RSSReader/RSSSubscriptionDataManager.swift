@@ -15,7 +15,7 @@ class RSSSubscriptionDataManager: NSObject, RSSSubscriptionManager {
             if let data = subscribedFeedURLData {
                 return data
             }
-            return [String]()
+            return [feedRecommendations[0]]
         }
     }
     var feedRecommendations: Array<String> {

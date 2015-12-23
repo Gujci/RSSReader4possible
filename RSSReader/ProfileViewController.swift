@@ -47,6 +47,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, Subscription
     
     //MARK: - UITextField delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        //TODO: - validate the url
         if let url = textField.text {
             dataSource.addNewFeed(withUrl: url)
         }
