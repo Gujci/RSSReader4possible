@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RSSDataReader: NSObject, NSXMLParserDelegate, RSSDataProvider {
+class RSSDataReader: NSObject, NSXMLParserDelegate, RSSDataProvider, SubscriptionListener {
 
     var rssData: Array<RSSData> {
         get {
@@ -20,8 +20,28 @@ class RSSDataReader: NSObject, NSXMLParserDelegate, RSSDataProvider {
     }
     
     private var loadedData: Array<RSSData>?
+    private lazy var dataListeners : Array<RSSDataListener> = {
+        return Array<RSSDataListener>()
+    }()
     
-    func loadData(done: ((NSError?) -> Void)) {
-        //TODO: - implement it
+    override init() {
+        super.init()
+        
+        AppDependencies.sharedInstance.appSubscriptionManager.addSubscriptionListener(self)
     }
+    
+    func loadData() {
+        //TODO: - implement it
+        //TODO: - notify listeners
+    }
+    
+    func addDataListener(listener: RSSDataListener) {
+        dataListeners.append(listener)
+    }
+    
+    //MARK: - subscription listener
+    func subscriptionDataDidChange() {
+        loadData()
+    }
+    
 }

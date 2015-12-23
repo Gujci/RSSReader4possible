@@ -1,5 +1,5 @@
 //
-//  AppSessionHandler.swift
+//  FacebookSessionHandler.swift
 //  RSSReader
 //
 //  Created by Gujgiczer Máté on 22/12/15.
@@ -10,16 +10,8 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-@objc protocol AppSessionListener {
 
-    optional func userDidLogIn(err: NSError?);
-    optional func userDidLogOut(err: NSError?);
-
-}
-
-class AppSessionHandler: NSObject, FBSDKLoginButtonDelegate {
-
-    static let sharedInstance = AppSessionHandler()
+class FacebookSessionHandler: NSObject, SessionHandler {
     
     var isUserLoggedIn : Bool! {
         get {
@@ -30,6 +22,12 @@ class AppSessionHandler: NSObject, FBSDKLoginButtonDelegate {
     var userID : String! {
         get {
             return FBSDKAccessToken.currentAccessToken().userID
+        }
+    }
+    
+    var accessToken : String! {
+        get {
+            return FBSDKAccessToken.currentAccessToken().tokenString
         }
     }
     
@@ -51,27 +49,5 @@ class AppSessionHandler: NSObject, FBSDKLoginButtonDelegate {
     
     func addSessionListener(listener: AppSessionListener) {
         sessionListeners.append(listener)
-    }
-    
-    //MARK: - Facebook
-    func inintFacebookSDK(withApplication application: UIApplication, launchOptions: [NSObject: AnyObject]?) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(
-            application,
-            didFinishLaunchingWithOptions: launchOptions
-        )
-    }
-    
-    //MARK: - Facebook Button delegate
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        if result.isCancelled {
-            logOut(error)
-        }
-        else {
-            logIn(error)
-        }
-    }
-    
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        logOut(nil)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController, RSSDataListener {
     
     private let dataProvider : RSSDataProvider = AppDependencies.sharedInstance.appRSSDataProvider
     
@@ -18,18 +18,23 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView(frame: CGRectZero)
-        dataProvider.loadData { (err: NSError?) -> Void in
-            if let _ = err {
-                return
-            }
-            self.tableView.reloadData()
-        }
+        dataProvider.addDataListener(self)
+        dataProvider.loadData()
     }
 
     override func viewWillAppear(animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
     }
+    
+    // MARK: - RSSDataListener 
+    func rssDataDidLoad(err: NSError?) {
+        if let _ = err {
+            return
+        }
+        tableView.reloadData()
+    }
+    
     
     // MARK: - Table View
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -48,6 +53,10 @@ class MasterViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //TODO: - implement it
+    }
+    
+    //MARK: - Navigation
+    @IBAction func closedProfile(segue:UIStoryboardSegue) {
     }
 }
 

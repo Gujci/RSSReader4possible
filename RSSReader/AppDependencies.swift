@@ -8,19 +8,57 @@
 
 import UIKit
 
+//MARK: - Login & session protocolls
+@objc protocol AppSessionListener {
+    
+    optional func userDidLogIn(err: NSError?)
+    optional func userDidLogOut(err: NSError?)
+}
+
+protocol SessionHandler {
+    
+    var isUserLoggedIn : Bool! { get }
+    var userID : String! { get }
+    var accessToken : String! { get }
+    
+    func logOut(err: NSError?)
+    func logIn(err: NSError?)
+    func addSessionListener(listener: AppSessionListener)
+}
+
+//MARK: - Navigation protocoll
+protocol NavigationManager {
+    
+    func setMainWindow(window: UIWindow?)
+    func startApplication(animated: Bool)
+}
+
+//MARK: - RSS data & protocols
 struct RSSData {
     
     var title : String!
     var link : String!
     
+    //TODO: - init
+}
+
+protocol RSSDataListener {
     
+    func rssDataDidLoad(err: NSError?)
 }
 
 protocol RSSDataProvider {
     
     var rssData: Array<RSSData> { get }
+    
+    func loadData()
+    func addDataListener(listener: RSSDataListener)
+}
 
-    func loadData(done: ((NSError?) -> Void))
+//MARK: - RSS subscription protocols
+protocol SubscriptionListener {
+    
+    func subscriptionDataDidChange()
 }
 
 protocol RSSSubscriptionManager {
@@ -29,19 +67,25 @@ protocol RSSSubscriptionManager {
     var feedRecommendations: Array<String> { get }
     
     func addNewFeed(withUrl url: String)
+    func removeFeed(withUrl url: String)
+    func addSubscriptionListener(listener: SubscriptionListener)
 }
 
+//MARK: - Wire
 class AppDependencies: NSObject {
     
     static let sharedInstance = AppDependencies()
 
-    var appRSSDataProvider : RSSDataProvider!
-    var appSubscriptionManager : RSSSubscriptionManager!
-    
-    override init() {
-        super.init()
-        
-        appRSSDataProvider = RSSDataReader()
-        appSubscriptionManager = RSSSubscriptionDataManager()
-    }
+    lazy var appSessionHandler : SessionHandler! = {
+        return FacebookSessionHandler()
+    }()
+    lazy var appNavigationManager : NavigationManager! = {
+       return BasicAppNavigationManager()
+    }()
+    lazy var appRSSDataProvider : RSSDataProvider! = {
+        return RSSDataReader()
+    }()
+    lazy var appSubscriptionManager : RSSSubscriptionManager! = {
+       return RSSSubscriptionDataManager()
+    }()
 }

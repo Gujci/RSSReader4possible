@@ -13,7 +13,7 @@ class LoginViewController: UIViewController, AppSessionListener {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        AppSessionHandler.sharedInstance.addSessionListener(self)
+        AppDependencies.sharedInstance.appSessionHandler.addSessionListener(self)
     }
     
     //MARK: - App Session listener

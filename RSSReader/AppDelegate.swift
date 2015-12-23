@@ -13,13 +13,14 @@ import FBSDKCoreKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let navigationManager = AppDependencies.sharedInstance.appNavigationManager
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let didInitFacebookSuccessfully = AppSessionHandler.sharedInstance.inintFacebookSDK(withApplication: application, launchOptions: launchOptions)
+        let didInitFacebookSuccessfully = FBSDKApplicationDelegate.sharedInstance().application( application, didFinishLaunchingWithOptions: launchOptions)
         
-        AppNavigationManager.sharedInstance.setMainWindow(self.window!)
-        AppNavigationManager.sharedInstance.startApplication()
+        navigationManager.setMainWindow(self.window!)
+        navigationManager.startApplication(false)
         self.window!.makeKeyAndVisible()
     
         return didInitFacebookSuccessfully

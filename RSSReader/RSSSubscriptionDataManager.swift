@@ -20,20 +20,51 @@ class RSSSubscriptionDataManager: NSObject, RSSSubscriptionManager {
     }
     var feedRecommendations: Array<String> {
         get {
-            //TODO: -
-            return ["sad","asd"]
+            var suggestions = [
+                "http://images.apple.com/main/rss/hotnews/hotnews.rss",
+                "TEST",
+                "TEST2"
+            ]
+            subscribedFeedURLData?.forEach({ (url) -> () in
+                suggestions.removeObject(url)
+            })
+            return suggestions
         }
     }
     
+    private lazy var subscriptionListeners : Array<SubscriptionListener> = {
+        return Array<SubscriptionListener>()
+    }()
+    
     func addNewFeed(withUrl url: String) {
         var currentFeedList = subscribedFeedURLData
+        if currentFeedList == nil {
+            currentFeedList = [String]()
+        }
         currentFeedList?.append(url)
         subscribedFeedURLData = currentFeedList
+        subscriptionListeners.forEach { (listener: SubscriptionListener) -> () in
+            listener.subscriptionDataDidChange()
+        }
+    }
+    
+    func removeFeed(withUrl url: String) {
+        var currentFeedList = subscribedFeedURLData
+        currentFeedList?.removeObject(url)
+        subscribedFeedURLData = currentFeedList
+        subscriptionListeners.forEach { (listener: SubscriptionListener) -> () in
+            listener.subscriptionDataDidChange()
+        }
+    }
+    
+    func addSubscriptionListener(listener: SubscriptionListener) {
+        subscriptionListeners.append(listener)
     }
     
     private var subscribedFeedURLData: Array<String>? {
         get {
-            if let id = NSUserDefaults.standardUserDefaults().objectForKey("\(AppSessionHandler.sharedInstance.userID).subscribedFeedURLData") as! [String]? {
+            if let id = NSUserDefaults.standardUserDefaults().objectForKey(
+                "\(AppDependencies.sharedInstance.appSessionHandler.userID).subscribedFeedURLData") as! [String]? {
                 return id
             }
             else {
@@ -42,7 +73,8 @@ class RSSSubscriptionDataManager: NSObject, RSSSubscriptionManager {
         }
         
         set (value) {
-            NSUserDefaults.standardUserDefaults().setObject(value, forKey: "\(AppSessionHandler.sharedInstance.userID).subscribedFeedURLData")
+            NSUserDefaults.standardUserDefaults().setObject(value,
+                forKey: "\(AppDependencies.sharedInstance.appSessionHandler.userID).subscribedFeedURLData")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
     }

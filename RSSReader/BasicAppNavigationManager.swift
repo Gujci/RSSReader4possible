@@ -1,5 +1,5 @@
 //
-//  AppNavigationManager.swift
+//  BasicAppNavigationManager.swift
 //  RSSReader
 //
 //  Created by Gujgiczer Máté on 22/12/15.
@@ -8,9 +8,7 @@
 
 import UIKit
 
-class AppNavigationManager: NSObject, UISplitViewControllerDelegate, AppSessionListener {
-    
-    static let sharedInstance = AppNavigationManager()
+class BasicAppNavigationManager: NSObject, UISplitViewControllerDelegate, AppSessionListener, NavigationManager {
     
     private var mainWindow : UIWindow!
     private var mainScreen: UIViewController! {
@@ -28,7 +26,7 @@ class AppNavigationManager: NSObject, UISplitViewControllerDelegate, AppSessionL
     
     override init() {
         super.init()
-        AppSessionHandler.sharedInstance.addSessionListener(self)
+        AppDependencies.sharedInstance.appSessionHandler.addSessionListener(self)
     }
     
     func setMainWindow(window: UIWindow?) {
@@ -38,7 +36,7 @@ class AppNavigationManager: NSObject, UISplitViewControllerDelegate, AppSessionL
     }
     
     func startApplication(animated: Bool = false) {
-        let newRoot = !AppSessionHandler.sharedInstance.isUserLoggedIn ? loginScreen : mainScreen
+        let newRoot = !AppDependencies.sharedInstance.appSessionHandler.isUserLoggedIn ? loginScreen : mainScreen
         if animated {
             UIView.transitionWithView(mainWindow, duration: 0.3, options: .TransitionCrossDissolve, animations: { () -> Void in
                 self.mainWindow.rootViewController = newRoot
