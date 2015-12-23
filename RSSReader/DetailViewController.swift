@@ -14,13 +14,20 @@ class DetailViewController: UIViewController, RSSDataListener {
     private let dataProvider : RSSDataProvider = AppDependencies.sharedInstance.appRSSDataProvider
     
     @IBOutlet weak var contentWebView: UIWebView!
+    @IBOutlet weak var screenNavigationItem: UINavigationItem!
+    
     var shareData: RSSData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        setupWithSelection(dataProvider.selectedDataIndex)
         dataProvider.addDataListener(self)
+        if dataProvider.rssData.count > 0 {
+            setupWithSelection(dataProvider.selectedDataIndex)
+        }
+        else {
+            dataProvider.loadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,13 +40,20 @@ class DetailViewController: UIViewController, RSSDataListener {
         setupWithSelection(index)
     }
     
+    func rssDataDidLoad(err: NSError?) {
+        if let _ = err {
+            return
+        }
+        setupWithSelection(dataProvider.selectedDataIndex)
+    }
+    
     private func setupWithSelection(selectedIndex: Int) {
         let url = NSURL(string: dataProvider.rssData[selectedIndex].link)
         let request = NSURLRequest(URL: url!)
         contentWebView.loadRequest(request)
         
         shareData = dataProvider.rssData[selectedIndex]
-        navigationController?.title = dataProvider.rssData[selectedIndex].title
+        screenNavigationItem.title = shareData?.title
     }
     
     //MARK: - Actions

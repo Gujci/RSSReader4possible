@@ -8,13 +8,12 @@
 
 import UIKit
 
-class BasicAppNavigationManager: NSObject, UISplitViewControllerDelegate, AppSessionListener, NavigationManager {
+class BasicAppNavigationManager: NSObject, AppSessionListener, NavigationManager {
     
     private var mainWindow : UIWindow!
     private var mainScreen: UIViewController! {
         get {
             let screen = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UISplitViewController
-            screen.delegate = self
             return screen
         }
     }
@@ -61,10 +60,5 @@ class BasicAppNavigationManager: NSObject, UISplitViewControllerDelegate, AppSes
             return
         }
         startApplication(true)
-    }
-    
-    // MARK: - Split view
-    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
-        return true
     }
 }

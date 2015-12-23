@@ -19,12 +19,12 @@ class MasterViewController: UITableViewController, RSSDataListener {
         
         tableView.tableFooterView = UIView(frame: CGRectZero)
         dataProvider.addDataListener(self)
-        dataProvider.loadData()
     }
 
     override func viewWillAppear(animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
+        dataProvider.loadData()
     }
     
     // MARK: - RSSDataListener 

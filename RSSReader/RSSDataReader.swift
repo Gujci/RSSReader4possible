@@ -11,7 +11,7 @@ import UIKit
 class RSSDataReader: NSObject, NSXMLParserDelegate, RSSDataProvider, SubscriptionListener {
 
     let rssFeedSource = AppDependencies.sharedInstance.appSubscriptionManager
-    var selectedDataIndex: Int! {
+    var selectedDataIndex: Int! = 0 {
         didSet {
             dataListeners.forEach { (listener: RSSDataListener) -> () in
                 listener.rssDataSelectedAt?(selectedDataIndex)

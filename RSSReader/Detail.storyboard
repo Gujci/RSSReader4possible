@@ -40,6 +40,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentWebView" destination="0Je-6d-oci" id="TGx-Q9-tAf"/>
+                        <outlet property="screenNavigationItem" destination="XoG-SB-6j2" id="YaZ-dU-3HM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MF-DK-39I" sceneMemberID="firstResponder"/>
