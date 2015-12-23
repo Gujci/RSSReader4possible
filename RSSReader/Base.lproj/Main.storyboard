@@ -63,6 +63,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="newTitle" destination="BUF-AA-roJ" id="OCx-KY-mC5"/>
+                                    <segue destination="nFy-Au-Jgb" kind="showDetail" id="kMa-ZK-R6z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -106,7 +107,10 @@
                 <viewControllerPlaceholder storyboardName="Detail" id="nFy-Au-Jgb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjk-Ay-pZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-336" y="-115"/>
+            <point key="canvasLocation" x="73" y="-122"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kMa-ZK-R6z"/>
+    </inferredMetricsTieBreakers>
 </document>

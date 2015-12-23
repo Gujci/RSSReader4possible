@@ -32,7 +32,9 @@ class MasterViewController: UITableViewController, RSSDataListener {
         if let _ = err {
             return
         }
-        tableView.reloadData()
+        Utils.dispatchMain() {
+            self.tableView.reloadData()
+        }
     }
     
     

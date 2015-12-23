@@ -18,6 +18,9 @@ class DetailViewController: UIViewController, RSSDataListener {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        setupWithSelection(dataProvider.selectedDataIndex)
+        dataProvider.addDataListener(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,12 +30,16 @@ class DetailViewController: UIViewController, RSSDataListener {
 
     //MARK: - RSSDataListener
     func rssDataSelectedAt(index: Int) {
-        let url = NSURL(string: dataProvider.rssData[index].link)
+        setupWithSelection(index)
+    }
+    
+    private func setupWithSelection(selectedIndex: Int) {
+        let url = NSURL(string: dataProvider.rssData[selectedIndex].link)
         let request = NSURLRequest(URL: url!)
         contentWebView.loadRequest(request)
         
-        shareData = dataProvider.rssData[index]
-        navigationController?.title = dataProvider.rssData[index].title
+        shareData = dataProvider.rssData[selectedIndex]
+        navigationController?.title = dataProvider.rssData[selectedIndex].title
     }
     
     //MARK: - Actions

@@ -39,7 +39,10 @@ struct RSSData {
     var title : String!
     var link : String!
     
-    //TODO: - init
+    init(withTitle title: String, link: String) {
+        self.title = title
+        self.link = link
+    }
 }
 
 @objc protocol RSSDataListener {

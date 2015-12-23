@@ -34,6 +34,8 @@
 		21AC87EE1C2AD5CF00A17546 /* SubscriptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87ED1C2AD5CF00A17546 /* SubscriptionsTableViewController.swift */; };
 		21AC87F01C2AEEE900A17546 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87EF1C2AEEE900A17546 /* SuggestionTableViewCell.swift */; };
 		21AC87F21C2AEEFA00A17546 /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC87F11C2AEEFA00A17546 /* SubscriptionTableViewCell.swift */; };
+		21C427961C2B061A00D0E131 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C427951C2B061A00D0E131 /* Social.framework */; };
+		21C427981C2B067D00D0E131 /* RSSDataXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C427971C2B067D00D0E131 /* RSSDataXMLParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		21AC87ED1C2AD5CF00A17546 /* SubscriptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsTableViewController.swift; sourceTree = "<group>"; };
 		21AC87EF1C2AEEE900A17546 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
 		21AC87F11C2AEEFA00A17546 /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
+		21C427951C2B061A00D0E131 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		21C427971C2B067D00D0E131 /* RSSDataXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSDataXMLParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21C427961C2B061A00D0E131 /* Social.framework in Frameworks */,
 				21AC87CD1C28DA4100A17546 /* FBSDKCoreKit.framework in Frameworks */,
 				21AC87CE1C28DA4100A17546 /* FBSDKLoginKit.framework in Frameworks */,
 			);
@@ -85,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				21AC87DE1C296FF200A17546 /* .gitignore */,
+				21C427951C2B061A00D0E131 /* Social.framework */,
 				21AC87C51C28CA5A00A17546 /* FBSDKCoreKit.framework */,
 				21AC87C61C28CA5A00A17546 /* FBSDKLoginKit.framework */,
 				211F3F441C285A4700D31927 /* RSSReader */,
@@ -120,6 +126,7 @@
 				21AC87BB1C28C44B00A17546 /* BasicAppNavigationManager.swift */,
 				21AC87E91C2A28F900A17546 /* RSSSubscriptionDataManager.swift */,
 				21AC87C01C28C8D500A17546 /* RSSDataReader.swift */,
+				21C427971C2B067D00D0E131 /* RSSDataXMLParser.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21C427981C2B067D00D0E131 /* RSSDataXMLParser.swift in Sources */,
 				21AC87BF1C28C86700A17546 /* AppDependencies.swift in Sources */,
 				21AC87D81C296DD800A17546 /* NewsFeedTableViewCell.swift in Sources */,
 				21AC87C11C28C8D500A17546 /* RSSDataReader.swift in Sources */,

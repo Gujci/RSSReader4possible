@@ -18,10 +18,10 @@ class LoginViewController: UIViewController, AppSessionListener {
     
     //MARK: - App Session listener
     func userDidLogIn(err: NSError?) {
-        //TODO: -
+        
     }
     
     func userDidLogOut(err: NSError?) {
-        //TODO: -         
+        
     }
 }

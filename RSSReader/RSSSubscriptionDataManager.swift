@@ -15,15 +15,15 @@ class RSSSubscriptionDataManager: NSObject, RSSSubscriptionManager {
             if let data = subscribedFeedURLData {
                 return data
             }
-            return [feedRecommendations[0]]
+            return [String]()
         }
     }
     var feedRecommendations: Array<String> {
         get {
             var suggestions = [
                 "http://images.apple.com/main/rss/hotnews/hotnews.rss",
-                "TEST",
-                "TEST2"
+                "http://www.nytimes.com/services/xml/rss/nyt/World.xml",
+                "http://feeds.nytimes.com/nyt/rss/Technology"
             ]
             subscribedFeedURLData?.forEach({ (url) -> () in
                 suggestions.removeObject(url)
@@ -68,7 +68,7 @@ class RSSSubscriptionDataManager: NSObject, RSSSubscriptionManager {
                 return id
             }
             else {
-                return nil
+                return [feedRecommendations[0]]
             }
         }
         

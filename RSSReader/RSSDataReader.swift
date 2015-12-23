@@ -10,6 +10,7 @@ import UIKit
 
 class RSSDataReader: NSObject, NSXMLParserDelegate, RSSDataProvider, SubscriptionListener {
 
+    let rssFeedSource = AppDependencies.sharedInstance.appSubscriptionManager
     var selectedDataIndex: Int! {
         didSet {
             dataListeners.forEach { (listener: RSSDataListener) -> () in
@@ -38,9 +39,28 @@ class RSSDataReader: NSObject, NSXMLParserDelegate, RSSDataProvider, Subscriptio
     }
     
     func loadData() {
-        //TODO: - implement it
-        dataListeners.forEach { (listener: RSSDataListener) -> () in
-            listener.rssDataDidLoad?(nil)
+        loadedData = [RSSData]()
+        //FIXME: - call the listeners in a normal way
+        if rssFeedSource.subscribedFeeds.count > 0 {
+            rssFeedSource.subscribedFeeds.forEach { (url) -> () in
+                RSSDataXMLParser.startNewParser(withUrlString: url, done: { (err: NSError?, data: [RSSData]?) -> Void in
+                    if let error = err {
+                        self.dataListeners.forEach { (listener: RSSDataListener) -> () in
+                            listener.rssDataDidLoad?(error)
+                        }
+                        return
+                    }
+                    self.loadedData?.appendContentsOf(data!)
+                    self.dataListeners.forEach { (listener: RSSDataListener) -> () in
+                        listener.rssDataDidLoad?(nil)
+                    }
+                })
+            }
+        }
+        else {
+            self.dataListeners.forEach { (listener: RSSDataListener) -> () in
+                listener.rssDataDidLoad?(nil)
+            }
         }
     }
     
@@ -48,7 +68,7 @@ class RSSDataReader: NSObject, NSXMLParserDelegate, RSSDataProvider, Subscriptio
         dataListeners.append(listener)
     }
     
-    //MARK: - subscription listener
+    //MARK: - SubscriptionListener
     func subscriptionDataDidChange() {
         loadData()
     }
