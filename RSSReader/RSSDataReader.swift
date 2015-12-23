@@ -8,20 +8,20 @@
 
 import UIKit
 
-class RSSDataReader: NSObject, RSSDataProvider {
+class RSSDataReader: NSObject, NSXMLParserDelegate, RSSDataProvider {
 
-    var rssData: Array<NSObject> {
+    var rssData: Array<RSSData> {
         get {
-            //TODO: -
-            return Array<NSObject>()
+            if let data = loadedData {
+                return data
+            }
+            return [RSSData]()
         }
     }
     
-    func addNewFeed(withUrl url: String, done: ((NSError?) -> Void)) {
-        
-    }
+    private var loadedData: Array<RSSData>?
     
     func loadData(done: ((NSError?) -> Void)) {
-        
+        //TODO: - implement it
     }
 }

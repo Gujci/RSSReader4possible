@@ -27,6 +27,12 @@ class AppSessionHandler: NSObject, FBSDKLoginButtonDelegate {
         }
     }
     
+    var userID : String! {
+        get {
+            return FBSDKAccessToken.currentAccessToken().userID
+        }
+    }
+    
     private lazy var sessionListeners : Array<AppSessionListener> = {
         return Array<AppSessionListener>()
     }()

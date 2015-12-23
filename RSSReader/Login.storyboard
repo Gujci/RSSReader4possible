@@ -6,10 +6,10 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="V3m-tz-bYT">
             <objects>
-                <viewController id="c90-h3-H4Q" sceneMemberID="viewController">
+                <viewController id="c90-h3-H4Q" customClass="LoginViewController" customModule="RSSReader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cvl-Ul-gac"/>
                         <viewControllerLayoutGuide type="bottom" id="kdu-GM-HIP"/>
@@ -66,13 +66,14 @@
             </objects>
             <point key="canvasLocation" x="490.5" y="431.5"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Login Feed Collection View Controller-->
         <scene sceneID="Dct-rp-VdZ">
             <objects>
-                <collectionViewController id="h2p-vo-IqZ" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="BDQ-tA-Fz6">
+                <collectionViewController id="h2p-vo-IqZ" customClass="LoginFeedCollectionViewController" customModule="RSSReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="BDQ-tA-Fz6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aEA-G2-eRv">
                             <size key="itemSize" width="375" height="375"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -80,14 +81,27 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="T6t-Ar-NyS">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LoginFeedCell" id="T6t-Ar-NyS" customClass="LoginFeedCollectionViewCell" customModule="RSSReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KF-sD-ckk">
+                                            <rect key="frame" x="166" y="177" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5KF-sD-ckk" firstAttribute="centerY" secondItem="T6t-Ar-NyS" secondAttribute="centerY" id="ahj-a5-zDP"/>
+                                    <constraint firstItem="5KF-sD-ckk" firstAttribute="centerX" secondItem="T6t-Ar-NyS" secondAttribute="centerX" id="ds2-ec-bMY"/>
+                                </constraints>
                             </collectionViewCell>
                         </cells>
                         <connections>
